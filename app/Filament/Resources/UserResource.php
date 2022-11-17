@@ -28,15 +28,16 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->label('Name')
-                    ->required()
-                    ->disabled(),
-                Forms\Components\TextInput::make('email')->label('email')
-                    ->required()
-                    ->disabled(),
+                Forms\Components\TextInput::make('name')
+                    ->label('Name')
+                    ->required(),
+                Forms\Components\TextInput::make('email')
+                    ->label('email')
+                    ->required(),
                 Forms\Components\Select::make('role')
                     ->options(self::$roles)
                     ->required()
+                    ->columnSpan(2)
                     ->label('Rol')
                     ->default('user'),
             ]);
